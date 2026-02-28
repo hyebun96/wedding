@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-
     <!-- =====================================================
          1. 히어로 섹션: 커버 사진
          ===================================================== -->
@@ -14,9 +13,9 @@
          ===================================================== -->
     <section class="dday-section">
       <p class="dday-tag">{{ dDay }}</p>
-      <p class="dday-date">2026. 06. 20  토요일</p>
-      <p class="dday-time">오전 11시</p>
-      <p class="dday-place">수원 호텔 라뷔포레 (구 호텔리츠 컨벤션)</p>
+      <p class="dday-date">2026. 06. 20 Sat</p>
+      <p class="dday-place">오전 11시</p>
+      <p class="dday-place">수원 호텔 라뷔포레 7층 빌라드샬롯</p>
     </section>
 
     <!-- =====================================================
@@ -42,9 +41,9 @@
 
       <!-- 초대 문구 -->
       <p class="invite-msg">
-        두 사람이 하나가 될 새 인생을 시작합니다.<br>
-        사랑으로 가득 채워 즐거움은 나누고,<br>
-        어려움은 이겨내 함께 나아가는 삶을 꾸리겠습니다.<br>
+        7년을 한결같이 사랑해온 저희 두사람<br>
+        햇살이 짙어지는 6월,<br>
+        인생의 새로운 계절을 맞이하려 합니다. <br>
         <br>
         부디 걸음하시어 축복하여 주시면<br>
         더없는 기쁨이 되겠습니다.
@@ -62,7 +61,7 @@
       <!-- 신랑 프로필 -->
       <div class="profile-card">
         <div class="profile-role groom-role">
-          <img :src="require('@/assets/photo/9.jpg')" alt="groom" />
+          <img :src="require('@/assets/photo/7.jpg')" alt="groom" />
         </div>
         <div class="profile-info">
           <span class="profile-parents">정규찬 · 신진숙</span> 의 차남
@@ -76,7 +75,7 @@
       <!-- 신부 프로필 -->
       <div class="profile-card">
         <div class="profile-role bride-role">
-          <img :src="require('@/assets/photo/16.jpg')" alt="groom" />
+          <img :src="require('@/assets/photo/12.jpg')" alt="groom" />
         </div>
         <div class="profile-info">
           <span class="profile-parents">정일현 · 장영미</span> 의 차녀
@@ -99,7 +98,8 @@
         <p class="dc-label">본식</p>
         <p class="dc-date">2026년 6월 20일 (토)</p>
         <p class="dc-time">오전 11시</p>
-        <p class="dc-place">수원 호텔 라뷔포레 (구 호텔리츠 컨벤션)</p>
+        <p class="dc-place">수원 호텔 라뷔포레 7층 빌라드샬롯</p>
+        <p class="dc-place">(구) 수원 호텔리츠 컨벤션</p>
       </div>
 
       <!-- 새 달력 컴포넌트 -->
@@ -145,7 +145,8 @@
     <section class="map-section">
       <p class="section-title">오시는 길</p>
       <p class="map-addr-main">경기 수원시 팔달구 권광로 134번길 46</p>
-      <p class="map-addr-sub">수원 호텔 라뷔포레 7층 ((구) 호텔리츠 컨벤션)</p>
+      <p class="map-addr-sub">수원 호텔 라뷔포레 7층 빌라드샬롯</p>
+      <p class="map-addr-sub">(구) 호텔리츠 컨벤션</p>
 
       <!-- 카카오 지도 -->
       <div class="map-box">
@@ -185,22 +186,22 @@
           <div>
             <b>🚃 지하철</b><br>
             ✓ 분당선<br>
-            수원시청역 1번출구에서 도보 5분거리<br>
+            <span class="trans-sub">수원시청역 1번출구에서 도보 5분거리<br></span>
             ✓ 1호선 / ktx 이용시,<br>
-            수원역에서 분당선 환승후, 수원시청역 하차<br>
+            <span class="trans-sub">수원역에서 분당선 환승후, 수원시청역 하차<br></span>
           </div>
         </div>
         <div class="trans-row">
           <div>
             <b>🚌 버스</b><br>
             ✓ 수원시청역 5번 출구, 수원시청 하차<br>
-            92, 92-1, 61, 81<br>
+            <span class="trans-sub">92, 92-1, 61, 81<br></span>
             ✓ 수원시청역 3번 출구, 서울보증보험 하차<br>
-            3002, 4000, 80, 202<br>
+            <span class="trans-sub">3002, 4000, 80, 202<br></span>
             ✓ 수원시청역 2번 출구, 벽산그랜드코아 하차 <br>
-           13-1, 80, 99-2, 202<br>
+            <span class="trans-sub">13-1, 80, 99-2, 202<br></span>
             ✓ 수원시청역 1번출구, 파비오더씨타 하차<br>
-            11-1, 61, 80, 81
+            <span class="trans-sub">11-1, 61, 80, 81</span>
           </div>
         </div>
       </div>
@@ -223,15 +224,14 @@
     <footer class="footer">
       <div class="footer-img"></div>
       <div class="footer-dim"></div>
-      <p class="footer-heart">♥</p>
       <p class="footer-text">
-        언제나 곁을 따뜻하게 지켜주신<br>
-        양가 부모님과 사랑으로 응원해주신<br>
-        모든 분들께 감사드립니다.
+        언제나 곁을 따뜻하게 지켜주신 양가 부모님,<br>
+        사랑으로 응원해주신 모든 분들께 감사드립니다.
       </p>
     </footer>
 
     <!-- 주소 복사 알림 -->
+    <MusicPlayer/>
 
   </div>
 </template>
@@ -242,6 +242,7 @@ import WeddingPanel from '@/components/WeddingPanel.vue'
 import WeddingCalendar from '@/components/WeddingCalendar.vue'
 import WeddingGallery from '@/components/WeddingGallery.vue'
 import KakaoMap from '@/components/KakaoMap.vue'
+import MusicPlayer from '@/components/MusicPlayer.vue'
 import dayjs from 'dayjs'
 
 export default {
@@ -297,7 +298,7 @@ export default {
     async handleCopy (text) {
       try {
         await navigator.clipboard.writeText(text)
-        alert('복사되었습니다.')
+        alert('주소가 복사되었습니다. ')
       } catch (err) {
         console.error(err)
       }
@@ -307,7 +308,8 @@ export default {
     WeddingGallery,
     WeddingPanel,
     WeddingCalendar,
-    KakaoMap
+    KakaoMap,
+    MusicPlayer
   }
 }
 </script>
@@ -326,6 +328,12 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 body,
@@ -384,7 +392,7 @@ body,
 .hero-img {
   position: absolute;
   inset: 1px;
-  background: url('~@/assets/photo/18.jpg') center 30% / cover no-repeat;
+  background: url('~@/assets/photo/1.jpg') center 30% / cover no-repeat;
 }
 
 /* 아래쪽 자연스러운 페이드 */
@@ -410,7 +418,6 @@ body,
 
 .dday-tag {
   display: inline-block;
-  font-family: 'Playfair Display', serif;
   font-size: 12px;
   letter-spacing: 3px;
   color: #fff;
@@ -572,9 +579,9 @@ body,
 
 .profile-sep {
   font-size: 16px;
-  color: #e8c0c8;
-  text-align: center;
-  padding: 4px 0;
+  color: #f4a7b5;
+  text-align: right;
+  padding: 4px 127px;
   letter-spacing: 0;
 }
 
@@ -611,14 +618,14 @@ body,
   font-size: 17px;
   font-weight: 500;
   color: #1a1a1a;
-  margin-bottom: 4px;
+  margin-bottom: 7px;
   letter-spacing: 1px;
 }
 
 .dc-time {
   font-size: 14px;
   color: #777;
-  margin-bottom: 4px;
+  margin-bottom: 7px;
 }
 
 .dc-place {
@@ -733,6 +740,10 @@ body,
   color: #666;
 }
 
+.trans-sub {
+  padding-left: 10px;
+}
+
 /* ============================================================
    9. 마음 전하기
    ============================================================ */
@@ -761,13 +772,15 @@ body,
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .footer-img {
   position: absolute;
   inset: 1px;
   background-size: 115%;
-  background: url(http://localhost:8080/img/2.c2277319.jpg) center bottom /cover no-repeat;
+  background: url(./assets/photo/16.jpg) center bottom /cover no-repeat;
   z-index: 0;
 }
 
@@ -796,7 +809,7 @@ body,
 .footer-text {
   font-size: 13px;
   line-height: 2.2;
-  margin-bottom: 20px;
+  margin-bottom: 90px;
   letter-spacing: 0.3px;
 }
 </style>

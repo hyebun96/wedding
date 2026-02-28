@@ -43,6 +43,13 @@ export default {
       lightboxOpen: false,
       currentIdx: 1,
       images: [
+        require('@/assets/photo/1.jpg'),
+        require('@/assets/photo/2.jpg'),
+        require('@/assets/photo/3.jpg'),
+        require('@/assets/photo/4.jpg'),
+        require('@/assets/photo/5.jpg'),
+        require('@/assets/photo/6.jpg'),
+        require('@/assets/photo/7.jpg'),
         require('@/assets/photo/8.jpg'),
         require('@/assets/photo/9.jpg'),
         require('@/assets/photo/10.jpg'),
@@ -51,18 +58,11 @@ export default {
         require('@/assets/photo/13.jpg'),
         require('@/assets/photo/14.jpg'),
         require('@/assets/photo/15.jpg'),
-        require('@/assets/photo/18.jpg'),
-        require('@/assets/photo/20.jpg'),
-        require('@/assets/photo/19.jpg'),
         require('@/assets/photo/16.jpg'),
         require('@/assets/photo/17.jpg'),
-        require('@/assets/photo/1.jpg'),
-        require('@/assets/photo/2.jpg'),
-        require('@/assets/photo/3.jpg'),
-        require('@/assets/photo/4.jpg'),
-        require('@/assets/photo/5.jpg'),
-        require('@/assets/photo/6.jpg'),
-        require('@/assets/photo/7.jpg')
+        require('@/assets/photo/18.jpg'),
+        require('@/assets/photo/19.jpg'),
+        require('@/assets/photo/20.jpg')
       ]
     }
   },

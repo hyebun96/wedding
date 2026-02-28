@@ -115,11 +115,13 @@ export default {
 .account-toggle.groom {
   background: #eef1ff;
   padding-left: 30px;
+  color: black;
 }
 
 .account-toggle.bride {
   background: #f9eef2;
   padding-left: 30px;
+  color: black;
 }
 
 .arrow {

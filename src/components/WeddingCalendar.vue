@@ -2,7 +2,7 @@
   <div class="cal-wrap">
     <!-- 연도 / 월 헤더 -->
     <p class="cal-year">2026</p>
-    <p class="cal-month">June</p>
+    <p class="cal-month">6月</p>
 
     <!-- 요일 헤더 -->
     <table class="cal-table">
