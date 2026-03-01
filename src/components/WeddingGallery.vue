@@ -23,12 +23,15 @@
         <button class="lb-close" @click="closeLightbox">✕</button>
         <button class="lb-prev" @click="prev">‹</button>
 
-        <div class="lb-img-wrap">
+        <div class="lb-img-wrap"
+             @touchstart="handleTouchStart"
+             @touchend="handleTouchEnd"
+        >
           <img :src="images[currentIdx]" :alt="`웨딩 사진 ${currentIdx + 1}`" />
           <p class="lb-counter">{{ currentIdx + 1 }} / {{ images.length }}</p>
-        </div>
 
-        <button class="lb-next" @click="next">›</button>
+          <button class="lb-next" @click="next">›</button>
+        </div>
       </div>
     </transition>
   </div>
@@ -42,6 +45,9 @@ export default {
       showAll: false,
       lightboxOpen: false,
       currentIdx: 1,
+      touchStartX: 0,
+      touchEndX: 0,
+      scrollY: 0,
       images: [
         require('@/assets/photo/1.jpg'),
         require('@/assets/photo/2.jpg'),
@@ -78,16 +84,50 @@ export default {
       this.currentIdx = idx
       this.lightboxOpen = true
       document.body.style.overflow = 'hidden'
+
+      // 현재 스크롤 위치 저장
+      this.scrollY = window.scrollY
+
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${this.scrollY}px`
+      document.body.style.width = '100%'
     },
     closeLightbox () {
       this.lightboxOpen = false
-      document.body.style.overflow = ''
+
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+
+      // 원래 스크롤 위치 복원
+      window.scrollTo(0, this.scrollY)
     },
     prev () {
       this.currentIdx = (this.currentIdx - 1 + this.images.length) % this.images.length
     },
     next () {
       this.currentIdx = (this.currentIdx + 1) % this.images.length
+    },
+    handleTouchStart (e) {
+      this.touchStartX = e.changedTouches[0].screenX
+    },
+    handleTouchEnd (e) {
+      this.touchEndX = e.changedTouches[0].screenX
+      this.handleSwipe()
+    },
+    handleSwipe () {
+      const diff = this.touchEndX - this.touchStartX
+
+      // 최소 이동 거리 (너무 민감하지 않게)
+      if (Math.abs(diff) < 50) return
+
+      if (diff > 0) {
+        // 오른쪽으로 밀었으면 이전 사진
+        this.prev()
+      } else {
+        // 왼쪽으로 밀었으면 다음 사진
+        this.next()
+      }
     }
   }
 }
@@ -118,12 +158,13 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.35s ease;
 }
 
 .gallery-cell:hover img {
-  transform: scale(1.06);
+  transform: scale(1.03);
 }
 
 /* ============================================================
@@ -167,6 +208,7 @@ export default {
   flex-direction: column;
   align-items: center;
   max-width: 90vw;
+  touch-action: pan-y;
 }
 
 .lb-img-wrap img {
@@ -200,7 +242,7 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.12);
+  background: rgb(255 255 255 / 0%);
   border: none;
   color: #fff;
   font-size: 40px;

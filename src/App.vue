@@ -232,18 +232,21 @@
 
     <!-- 주소 복사 알림 -->
     <MusicPlayer/>
-
   </div>
 </template>
 
 <!----------- script ----------->
 <script>
+import { onMounted } from 'vue'
+import Sakura from 'sakura-js'
+
+import dayjs from 'dayjs'
+
 import WeddingPanel from '@/components/WeddingPanel.vue'
 import WeddingCalendar from '@/components/WeddingCalendar.vue'
 import WeddingGallery from '@/components/WeddingGallery.vue'
 import KakaoMap from '@/components/KakaoMap.vue'
 import MusicPlayer from '@/components/MusicPlayer.vue'
-import dayjs from 'dayjs'
 
 export default {
   name: 'IndexPage',
@@ -310,6 +313,24 @@ export default {
     WeddingCalendar,
     KakaoMap,
     MusicPlayer
+  },
+  setup () {
+    onMounted(() => {
+      // eslint-disable-next-line no-new
+      new Sakura('body', {
+        colors: [
+          {
+            gradientColorStart: 'rgba(255, 183, 197, 0.8)',
+            gradientColorEnd: 'rgba(255, 197, 208, 0.8)',
+            gradientColorDegree: 120
+          }
+        ],
+        fallSpeed: 1,
+        maxSize: 14,
+        minSize: 8,
+        delay: 200
+      })
+    })
   }
 }
 </script>
